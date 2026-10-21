@@ -339,7 +339,7 @@ For example, `"dog": [1, 2, 3]` means that the keyword or query appears in docum
 
 ## Randomness
 
-The random seed can be varied (e.g., np.random.seed(<value>)). A different seed may cause slight fluctuations in values such as the recovery rate, but the overall trends are consistent with the paper.
+The random seed can be varied (e.g., `np.random.seed(<value>)`). A different seed may cause slight fluctuations in values such as the recovery rate, but the overall trends are consistent with the paper.
 
 ## Dataset Checksums
 
