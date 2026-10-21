@@ -18,7 +18,7 @@ if __name__ == '__main__':
     scenarios = args.scenarios
     dataset = args.dataset
 
-    p = 0.9999
+    p = 0.999
     q = [0.01, 0.02, 0.05, 0]
     queryRate = 0.5  # Query proportion
     count = 10  # Number of experiments
@@ -60,10 +60,12 @@ if __name__ == '__main__':
             M, N = utils.co_occurrence(A, B, num1, num2)
             M_, N_ = utils.co_absence(A, B, num1, num2)
             if v_m != 0:
-                M = utils.CLRZ(M, M_, p, v_m)
-                M_ = utils.CLRZ(M, M_, 1 - p, 1 - v_m)
-                N = utils.CLRZ(N, N_, p, v_m)
-                N_ = utils.CLRZ(N, N_, 1 - p, 1 - v_m)
+                M_orig, M__orig = M.copy(), M_.copy()
+                N_orig, N__orig = N.copy(), N_.copy()
+                M = utils.CLRZ(M_orig, M__orig, p, v_m)
+                M_ = utils.CLRZ(M_orig, M__orig, 1 - p, 1 - v_m)
+                N = utils.CLRZ(N_orig, N__orig, p, v_m)
+                N_ = utils.CLRZ(N_orig, N__orig, 1 - p, 1 - v_m)
 
             # The main diagonal of the co-occurrence(absence) matrix
             volumeToken = pd.Series(np.diag(N), index=N.index)

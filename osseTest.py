@@ -17,7 +17,7 @@ if __name__ == '__main__':
     scenarios = args.scenarios
     dataset = args.dataset
 
-    TPR = 0.9999
+    TPR = 0.999
     FPR_list = [0.01, 0.02, 0.05, 0]
     queryRate = 0.5
     count = 10
