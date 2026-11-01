@@ -49,7 +49,7 @@ def _run_simmulated_annealing(remaining_tags, remaining_keywords, initial_state,
 def ikk_attack(M, N, wordSet, query):
     naive_flag = False
     unique_flag = True
-    cooling_rate = 0.9999
+    cooling_rate = 0.999
 
     ntok = len(query)
     nkw = len(wordSet)
